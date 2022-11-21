@@ -139,6 +139,7 @@ namespace NzWalks.Migrations
                     b.Navigation("WalkDifficulty");
                 });
 #pragma warning restore 612, 618
+
         }
     }
 }
