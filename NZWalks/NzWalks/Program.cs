@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using NzWalks.Api.Controllers;
 using NzWalks.DATA;
+using NzWalks.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,10 +20,12 @@ builder.Services.AddDbContext<NzWalksDbContext>(options =>
 });
 
 
+builder.Services.AddScoped<IRegionRepository, RegionRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment()) 
 {
     app.UseSwagger();
     app.UseSwaggerUI();
