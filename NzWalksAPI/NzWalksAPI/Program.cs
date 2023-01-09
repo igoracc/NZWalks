@@ -1,8 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using NzWalks.Api.Controllers;
-using NzWalks.DATA;
-using NzWalks.Repositories;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,21 +7,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<NzWalksDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("NZWalks"));
-});
-
-builder.Services.AddScoped<IRegionRepository, RegionRepository>();
-
-
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment()) 
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -38,4 +22,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();  
+app.Run();
