@@ -1,4 +1,6 @@
-﻿namespace NzWalksAPI.Models.Domain
+﻿using NzWalksAPI.Models.Domain;
+
+namespace NzWalksAPI.Models.DTO
 {
     public class Walk
     {
@@ -16,5 +18,4 @@
 
 
     }
-
-} 
+}
