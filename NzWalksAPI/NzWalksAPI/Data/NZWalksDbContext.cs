@@ -13,11 +13,6 @@ namespace NzWalksAPI.Data
         }
 
 
-
-        /// <summary>
-        /// Tabele imena
-        /// </summary>
-        /// 
         public DbSet<Region> Regions { get; set; }   
 
         public DbSet<Walk> Walks { get; set; }
